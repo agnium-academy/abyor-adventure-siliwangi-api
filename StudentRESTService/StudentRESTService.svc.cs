@@ -12,7 +12,7 @@ namespace StudentRESTService
     // NOTE: In order to launch WCF Test Client for testing this service, please select StudentRESTService.svc or StudentRESTService.svc.cs at the Solution Explorer and start debugging.
     public class StudentRESTService : IStudentRESTService
     {
-        public List<Students> GetStudentList()
+        public List<Students> Students()
         {
             return StudentList.Instance.studentlist;
         }
