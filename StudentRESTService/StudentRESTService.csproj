@@ -89,12 +89,17 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IStudentRESTService.svc" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IIStudentRESTService.cs" />
+    <Compile Include="IStudentRESTService.svc.cs">
+      <DependentUpon>IStudentRESTService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Model\Students.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
