@@ -11,11 +11,11 @@ namespace StudentRESTService
 
         public StudentRepository()
         {
-            AddNewStudents(new Students { Nama = "Ucu", Alamat = "Kalimantan", Umur = 20 });
-            AddNewStudents(new Students { Nama = "Trio", Alamat = "Brebes", Umur = 17 });
-            AddNewStudents(new Students { Nama = "Dwi", Alamat = "Cilacap", Umur = 18 });
-            AddNewStudents(new Students { Nama = "Sofi", Alamat = "Banten", Umur = 18 });
-            AddNewStudents(new Students { Nama = "Ambar", Alamat = "Jogja", Umur = 18 });
+            AddNewStudents(new Students {NIM =4, Nama = "Ucu", Alamat = "Kalimantan", Umur = 20 });
+            AddNewStudents(new Students { NIM = 1, Nama = "Trio", Alamat = "Brebes", Umur = 17 });
+            AddNewStudents(new Students { NIM = 2, Nama = "Dwi", Alamat = "Cilacap", Umur = 18 });
+            AddNewStudents(new Students { NIM = 3, Nama = "Sofi", Alamat = "Banten", Umur = 18 });
+            AddNewStudents(new Students { NIM = 5, Nama = "Ambar", Alamat = "Jogja", Umur = 18 });
         }
 
         public List<Students> GetAllStudents()
