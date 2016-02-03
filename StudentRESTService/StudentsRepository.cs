@@ -1,9 +1,6 @@
-﻿using StudentRESTService;
-using StudentRESTService.Model;
+﻿using StudentRESTService.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace StudentRESTService
 {
