@@ -89,23 +89,25 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IStudentRESTService.svc" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Service1.svc" />
+    <Content Include="StudentRESTService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IIStudentRESTService.cs" />
-    <Compile Include="IStudentRESTService.svc.cs">
-      <DependentUpon>IStudentRESTService.svc</DependentUpon>
-    </Compile>
+    <Compile Include="IStudentRESTService.cs" />
+    <Compile Include="IStudentRESTServices.cs" />
+    <Compile Include="Model\StudentList.cs" />
     <Compile Include="Model\Students.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentRESTService.svc.cs">
+      <DependentUpon>StudentRESTService.svc</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
