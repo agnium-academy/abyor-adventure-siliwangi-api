@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IStudentRESTService.cs" />
+    <Compile Include="IStudentsRepository.cs" />
     <Compile Include="Model\StudentList.cs" />
     <Compile Include="Model\Students.cs" />
     <Compile Include="Service1.svc.cs">
