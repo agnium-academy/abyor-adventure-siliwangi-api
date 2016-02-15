@@ -13,6 +13,8 @@ namespace StudentRESTService
 
         Students GetStudentsId(int Id);
 
+        Students GetStudentByName(string Nama);
+
         Students AddNewStudents(Students item);
 
         bool DeleteAStudents(int Id);

@@ -11,23 +11,14 @@ namespace StudentRESTService
 
         public StudentRepository()
         {
-            AddNewStudents(new Students {NIM =4, Nama = "Ucu", Alamat = "Kalimantan", Umur = 20 });
+            AddNewStudents(new Students { NIM = 4, Nama = "Ucu", Alamat = "Kalimantan", Umur = 20 });
             AddNewStudents(new Students { NIM = 1, Nama = "Trio", Alamat = "Brebes", Umur = 17 });
             AddNewStudents(new Students { NIM = 2, Nama = "Dwi", Alamat = "Cilacap", Umur = 18 });
             AddNewStudents(new Students { NIM = 3, Nama = "Sofi", Alamat = "Banten", Umur = 18 });
             AddNewStudents(new Students { NIM = 5, Nama = "Ambar", Alamat = "Jogja", Umur = 18 });
         }
 
-        public List<Students> GetAllStudents()
-        {
-            return students;
-        }
-
-        //public Students GetStudentByNIM(int NIM)
-        //{
-           
-        //}
-
+        //1. Create Students
         public Students AddNewStudents(Students newStudent)
         {
             if (newStudent == null)
@@ -37,22 +28,25 @@ namespace StudentRESTService
             return newStudent;
         }
 
-        
+        //2. Get List All Students
+        public List<Students> GetAllStudents()
+        {
+            return students;
+        }
 
+        //3. Get Students By NIM
         public Students GetStudentsId(int NIM)
         {
             return students.Find(b => b.NIM == NIM);
         }
 
-        public bool DeleteAStudents(int NIM)
+        //4. Get Students By Name
+        public Students GetStudentByName(string Nama)
         {
-            int idx = students.FindIndex(b => b.NIM == NIM);
-            if (idx == -1)
-                return false;
-            students.RemoveAll(b => b.NIM == NIM);
-            return true;
+            return students.Find(b => b.Nama.Contains(Nama));
         }
 
+        //3. Update Students
         public bool UpdateAStudents(Students updatedStudents)
         {
             if (updatedStudents == null)
@@ -64,6 +58,19 @@ namespace StudentRESTService
             students.Add(updatedStudents);
             return true;
         }
+
+        //4. Delete Students
+        public bool DeleteAStudents(int NIM)
+        {
+            int idx = students.FindIndex(b => b.NIM == NIM);
+            if (idx == -1)
+                return false;
+            students.RemoveAll(b => b.NIM == NIM);
+            return true;
+        }
+
+        
+
     }
 
 

@@ -8,44 +8,33 @@ using StudentRESTService.Model;
 
 namespace StudentRESTService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "StudentRESTService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select StudentRESTService.svc or StudentRESTService.svc.cs at the Solution Explorer and start debugging.
-    public class StudentRESTService : IStudentRESTService
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "StudentService" in code, svc and config file together.
+    // NOTE: In order to launch WCF Test Client for testing this service, please select StudentService.svc or StudentService.svc.cs at the Solution Explorer and start debugging.
+    public class StudentService : IStudentService
     {
-        //public List<Students> Students()
-        //{
-        //    return StudentList.Instance.studentlist;
-        //}
-
         static IStudentsRepository repository = new StudentRepository();
 
         //GET Methods
-        public List<Students> GetStudentList()
+        public List<Students> getStudentList()
         {
             return repository.GetAllStudents();
         }
 
         //GET Methods
-        public Students GetStudentByID(string NIM)
+        public Students getStudentByID(string NIM)
         {
             return repository.GetStudentsId(int.Parse(NIM));
         }
 
-        //GET Methods for Name
-        public Students GetStudentByName(string Nama)
-        {
-            return repository.GetStudentByName(Nama);
-        }
-
         //POST Methods
-        public string AddBook(Students student, string NIM)
+        public string addBook(Students student, string NIM)
         {
             Students newStudent = repository.AddNewStudents(student);
-            return "NIM =" + newStudent.NIM;
+            return "id=" + newStudent.NIM;
         }
 
         //PUT Methods
-        public string UpdateBook(Students student, string NIM)
+        public string updateBook(Students student, string NIM)
         {
             bool updated = repository.UpdateAStudents(student);
             if (updated)
@@ -54,7 +43,7 @@ namespace StudentRESTService
                 return "Unable to update student with NIM = " + NIM;
         }
 
-        public string DeleteBook(string NIM)
+        public string deleteBook(string NIM)
         {
             bool deleted = repository.DeleteAStudents(int.Parse(NIM));
             if (deleted)
@@ -62,6 +51,5 @@ namespace StudentRESTService
             else
                 return "Unable to delete book with id = " + NIM;
         }
-
     }
 }
